@@ -84,7 +84,7 @@ const apiKeyMiddleware = (req, res, next) => {
 
 // API Endpoint to send emails (protected by the API Key middleware)
 app.post('/send-emails', apiKeyMiddleware, async (req, res) => {
-    const { emails, message, subject } = req.body;
+    const { emails, message, subject,replyTo } = req.body;
     console.log("emails:", emails)
     console.log("emails:", message)
     console.log("subject:", subject)
