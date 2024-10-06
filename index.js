@@ -32,7 +32,7 @@ app.use(cors({
 // Initialize Redis connection for Bull queue
 const emailQueue = new Bull('email-queue', {
   redis: {
-    host: process.env.REDIS_HOST, // or your Redis host
+    host: 'careful-lion-26813.upstash.io', // or your Redis host
     port: process.env.REDIS_PORT,
     password: process.env.REDIS_PASSWORD,
   },
