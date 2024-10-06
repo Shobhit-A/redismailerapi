@@ -38,6 +38,15 @@ const emailQueue = new Bull('email-queue', {
   },
 });
 
+emailQueue.on('failed', (job, err) => {
+    console.error(`Job failed for ${job.data.email}`, err);
+});
+
+emailQueue.on('error', (error) => {
+    console.error('Redis/Bull Queue connection error:', error);
+});
+
+
 
 if (!global.transporter) {
     global.transporter = createTransport({
