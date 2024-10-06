@@ -35,6 +35,7 @@ const emailQueue = new Bull('email-queue', {
     host: 'careful-lion-26813.upstash.io', // or your Redis host
     port: process.env.REDIS_PORT,
     password: process.env.REDIS_PASSWORD,
+      tls: { rejectUnauthorized: false }, 
   },
 });
 
